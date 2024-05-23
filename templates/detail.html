@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Detail</title>
+</head>
+<body>
+    <h1>Student Detail</h1>
+    <p>Full Name: {{ student.full_name }}</p>
+    <p>Gender: {{ student.gender }}</p>
+    <p>School: {{ student.school }}</p>
+    <a href="{{ url_for('web.index') }}">Back to List</a>
+</body>
+</html>
