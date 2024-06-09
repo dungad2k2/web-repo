@@ -1,0 +1,65 @@
+input, button, label{
+  margin-top: 10px;
+}
+button {
+  background-color: #af4c4c; /* Màu nền xanh lá cây */
+  color: white; /* Màu chữ trắng */
+  padding: 10px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* Con trỏ thay đổi thành hình tay */
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+/* Hiệu ứng hover cho button */
+button:hover {
+  background-color: #a04598; /* Màu nền thay đổi khi hover */
+}
+
+/* Thiết kế cho input khi focus */
+input:focus {
+  border-color: #4CAF50; /* Đổi màu viền khi input được focus */
+  outline: none; /* Bỏ viền mặc định của trình duyệt */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Hiệu ứng bóng */
+}
+/* Reset margin và padding */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+/* Style cho header của bảng */
+th, td {
+  padding: 10px 13px;
+}
+
+th {
+  background-color: #006398;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Style cho các hàng của bảng */
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+/* Style khi hover */
+tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
