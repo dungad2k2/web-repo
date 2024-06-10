@@ -1,44 +1,44 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import ContactList from './ContactList'
-import ContactForm from './ContactForm'
+import StudentList from './StudentList'
+import StudentForm from './StudentForm'
 function App() {
-  const [contacts, setContacts] = useState([])
+  const [students, setStudents] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentContact, setCurrentContact] = useState({})
+  const [currentStudent, setCurrentStudent] = useState({})
   useEffect(() => {
-    fetchContacts()
+    fetchStudents()
   }, []);
-  const fetchContacts = async () => {
-    const response = await fetch("http://127.0.0.1:5000/contacts")
+  const fetchStudents = async () => {
+    const response = await fetch("http://192.168.101.247:5000/students")
     const data = await response.json()
-    setContacts(data.contacts);
+    setStudents(data.students);
   };
   const closeModal = () => {
     setIsModalOpen(false)
-    setCurrentContact({})
+    setCurrentStudent({})
   }
   const openCreateModal = () => {
     if(!isModalOpen) setIsModalOpen(true)
   }
-  const openEditModal = (contact) =>{
+  const openEditModal = (student) =>{
     if (isModalOpen) return 
-    setCurrentContact(contact)
+    setCurrentStudent(student)
     setIsModalOpen(true)
   }
   const onUpdate = () =>{
     closeModal()
-    fetchContacts()
+    fetchStudents()
   }
   return (
     <>
-      <ContactList contacts={contacts} updateContact={openEditModal} updateCallback={onUpdate}/>
-      <button onClick={openCreateModal}>Create New Contact</button>
+      <StudentList students={students} updateStudent={openEditModal} updateCallback={onUpdate}/>
+      <button onClick={openCreateModal}>Create New Student</button>
       {
         isModalOpen && <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
-            <ContactForm existingContact={currentContact} updateCallback={onUpdate} ></ContactForm>
+            <StudentForm existingStudent={currentStudent} updateCallback={onUpdate} ></StudentForm>
           </div>
         </div>
       }
